@@ -16,13 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ double
+ char
+ bool
+ unsigned int
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -62,9 +61,29 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
+    int a = -1;
+    int b = -3;
+    int c = -5;
+    float d = 1.1f;
+    float e = 1.3f;
+    float f = 1.5f;
+    double g = 1.2;
+    double h = 1.4;
+    double i = 1.6;
+    char grade = 'A';
+    char carClass = 'C';
+    char group = 'B';
+    bool on = true;
+    bool off = false;
+    bool running = true;
+    unsigned int j = 1;
+    unsigned int k = 3;
+    unsigned int l = 5;
+    
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+
+    ignoreUnused(a, b, c, d, e, f, g, h, i, grade, carClass, group, on, off, running, j, k, l);
 
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
@@ -84,43 +103,75 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+void playBasketball(int howManyGames = 1, int howManyPlayers = 10)
+{
+    ignoreUnused(howManyGames, howManyPlayers);
+}
 /*
  2)
  */
-
+bool goingForRun(int temp, double distance = 1.5)
+{
+    ignoreUnused(temp, distance);
+    return {};
+}
 /*
  3)
  */
-
+bool goingFishing(int temp, unsigned int weatherRating, bool gearReady = true)
+{
+    ignoreUnused(temp, weatherRating, gearReady);
+    return {};
+}
 /*
  4)
  */
-
+void practicePiano(char practicePiece, double time = 1)
+{
+    ignoreUnused(practicePiece, time);
+}
 /*
  5)
  */
-
+void giveTime(char mode = 'A', char timeZone = 'E')
+{
+    ignoreUnused(mode, timeZone);
+}
 /*
  6)
  */
-
+void cookDinner(unsigned int stoveTemp, int numberOfGuest = 2)
+{
+    ignoreUnused(stoveTemp, numberOfGuest);
+}
 /*
  7)
  */
-
+void assignClass(int age, char grade, int gradYear = 2024)
+{
+    ignoreUnused(age, grade, gradYear);
+}
 /*
  8)
  */
-
+void sendBirthdayCard(int birthDay, int birthMonth, int birthYear = 1980)
+{
+    ignoreUnused(birthDay, birthMonth, birthYear);
+}
 /*
  9)
  */
-
+void countMonthDays(int currentMonth, int currentYear = 2022)
+{
+    ignoreUnused(currentMonth, currentYear);
+}
 /*
  10)
  */
-
+void kickBallDistance(double legLength, double ballWeight = 1.5)
+{
+    ignoreUnused(legLength, ballWeight);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -141,27 +192,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    playBasketball();
     //2)
-    
+    auto goneForRun = goingForRun(85);
     //3)
-    
+    auto goneFishing = goingFishing(78, 7);
     //4)
-    
+    practicePiano('A');
     //5)
-    
+    giveTime();
     //6)
-    
+    cookDinner(450);
     //7)
-    
+    assignClass(10, 'B');
     //8)
-    
+    sendBirthdayCard(15, 5, 1995);
     //9)
-    
+    countMonthDays(2, 1998);
     //10)
+    kickBallDistance(3);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, goneForRun, goneFishing);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
